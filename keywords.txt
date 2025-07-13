@@ -1,0 +1,159 @@
+#######################################
+# Syntax Coloring Map For Aptos SDK
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+AptosSDK	KEYWORD1
+AptosAccount	KEYWORD1
+AptosTransaction	KEYWORD1
+AptosUtils	KEYWORD1
+AptosError	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+# AptosSDK methods
+setNodeUrl	KEYWORD2
+setTimeout	KEYWORD2
+setDebugMode	KEYWORD2
+getNodeInfo	KEYWORD2
+getLedgerInfo	KEYWORD2
+getBlockByHeight	KEYWORD2
+getBlockByVersion	KEYWORD2
+getAccount	KEYWORD2
+getAccountBalance	KEYWORD2
+getAccountTransactions	KEYWORD2
+getAccountResources	KEYWORD2
+getAccountModules	KEYWORD2
+getTransaction	KEYWORD2
+getTransactions	KEYWORD2
+submitTransaction	KEYWORD2
+simulateTransaction	KEYWORD2
+waitForTransaction	KEYWORD2
+transferCoin	KEYWORD2
+transferToken	KEYWORD2
+callFunction	KEYWORD2
+viewFunction	KEYWORD2
+getEventsByEventHandle	KEYWORD2
+getEventsByCreationNumber	KEYWORD2
+estimateGasPrice	KEYWORD2
+estimateTransactionGas	KEYWORD2
+isValidAddress	KEYWORD2
+normalizeAddress	KEYWORD2
+isConnected	KEYWORD2
+getLastError	KEYWORD2
+ping	KEYWORD2
+getChainId	KEYWORD2
+
+# AptosAccount methods
+createRandom	KEYWORD2
+fromPrivateKey	KEYWORD2
+fromMnemonic	KEYWORD2
+getPrivateKeyHex	KEYWORD2
+getPublicKeyHex	KEYWORD2
+getAddress	KEYWORD2
+isValid	KEYWORD2
+signMessage	KEYWORD2
+signTransaction	KEYWORD2
+saveToEEPROM	KEYWORD2
+loadFromEEPROM	KEYWORD2
+verifySignature	KEYWORD2
+clear	KEYWORD2
+print	KEYWORD2
+
+# AptosTransaction methods
+setSender	KEYWORD2
+setSequenceNumber	KEYWORD2
+setMaxGasAmount	KEYWORD2
+setGasUnitPrice	KEYWORD2
+setExpirationTimestamp	KEYWORD2
+setChainId	KEYWORD2
+entryFunction	KEYWORD2
+script	KEYWORD2
+coinTransfer	KEYWORD2
+tokenTransfer	KEYWORD2
+createAccount	KEYWORD2
+createCollection	KEYWORD2
+createToken	KEYWORD2
+publishModule	KEYWORD2
+callContract	KEYWORD2
+build	KEYWORD2
+getTransaction	KEYWORD2
+serialize	KEYWORD2
+getError	KEYWORD2
+getSender	KEYWORD2
+getSequenceNumber	KEYWORD2
+getMaxGasAmount	KEYWORD2
+getGasUnitPrice	KEYWORD2
+getExpirationTimestamp	KEYWORD2
+reset	KEYWORD2
+getHash	KEYWORD2
+createCoinTransfer	KEYWORD2
+createAccountTransaction	KEYWORD2
+
+# AptosUtils methods
+bytesToHex	KEYWORD2
+hexToBytes	KEYWORD2
+toHexString	KEYWORD2
+bytesToBase64	KEYWORD2
+base64ToBytes	KEYWORD2
+padHexAddress	KEYWORD2
+isValidHexString	KEYWORD2
+removeHexPrefix	KEYWORD2
+sha256Hash	KEYWORD2
+serializeU8	KEYWORD2
+serializeU64	KEYWORD2
+serializeString	KEYWORD2
+serializeAddress	KEYWORD2
+serializeVector	KEYWORD2
+getCurrentTimestamp	KEYWORD2
+generateTransactionHash	KEYWORD2
+isValidUrl	KEYWORD2
+extractDomain	KEYWORD2
+secureZero	KEYWORD2
+printHex	KEYWORD2
+parseJsonSafely	KEYWORD2
+getJsonString	KEYWORD2
+getJsonUint64	KEYWORD2
+isValidAmount	KEYWORD2
+isValidGasPrice	KEYWORD2
+isValidSequenceNumber	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+APTOS_MAINNET	LITERAL1
+APTOS_TESTNET	LITERAL1
+APTOS_DEVNET	LITERAL1
+
+APTOS_SUCCESS	LITERAL1
+APTOS_ERROR_NETWORK	LITERAL1
+APTOS_ERROR_JSON	LITERAL1
+APTOS_ERROR_INVALID_ADDRESS	LITERAL1
+APTOS_ERROR_INVALID_SIGNATURE	LITERAL1
+APTOS_ERROR_INSUFFICIENT_FUNDS	LITERAL1
+APTOS_ERROR_TRANSACTION_FAILED	LITERAL1
+APTOS_ERROR_TIMEOUT	LITERAL1
+
+USER_TRANSACTION	LITERAL1
+GENESIS_TRANSACTION	LITERAL1
+BLOCK_METADATA_TRANSACTION	LITERAL1
+STATE_CHECKPOINT_TRANSACTION	LITERAL1
+
+ENTRY_FUNCTION_PAYLOAD	LITERAL1
+SCRIPT_PAYLOAD	LITERAL1
+MODULE_BUNDLE_PAYLOAD	LITERAL1
+
+DEFAULT_MAX_GAS	LITERAL1
+DEFAULT_GAS_PRICE	LITERAL1
+DEFAULT_EXPIRATION_OFFSET	LITERAL1
+
+PRIVATE_KEY_SIZE	LITERAL1
+PUBLIC_KEY_SIZE	LITERAL1
+SIGNATURE_SIZE	LITERAL1
+ADDRESS_SIZE	LITERAL1
