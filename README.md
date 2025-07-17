@@ -1,4 +1,4 @@
-# Aptos SDK for ESP32
+# AptosIoT SDK – The World's First IoT-to-Aptos Bridge
 
 A comprehensive SDK for interacting with the Aptos blockchain from ESP32 devices using Arduino IDE.
 
