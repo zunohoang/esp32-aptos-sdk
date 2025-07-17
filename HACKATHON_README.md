@@ -14,31 +14,115 @@
 
 ## 🌟 Tính năng nổi bật
 
-### 🔐 Quản lý tài khoản an toàn
+### 🔐 Quản lý tài khoản và bảo mật
 
-- Tạo và quản lý private key trực tiếp trên ESP32
-- Lưu trữ an toàn trong EEPROM với mã hóa
-- Tương thích với Aptos wallet standards
+- **Tạo tài khoản**: Tạo account ngẫu nhiên hoặc từ private key
+- **Import từ mnemonic**: Khôi phục account từ seed phrase với derivation index
+- **Lưu trữ EEPROM**: Lưu private key an toàn trong EEPROM với mã hóa
+- **Signature**: Ký giao dịch và message với Ed25519
+- **Verification**: Xác minh chữ ký và tính toàn vẹn dữ liệu
+- **Secure memory**: Xóa an toàn dữ liệu nhạy cảm khỏi memory
 
-### 💰 Giao dịch blockchain đầy đủ
+### 🏦 Thông tin blockchain và node
 
-- Chuyển APT coin và custom tokens
-- Tạo và quản lý NFT collections
-- Tương tác với smart contracts
-- Ước tính gas và theo dõi trạng thái giao dịch
+- **Node info**: Lấy thông tin chi tiết về node Aptos
+- **Ledger info**: Truy vấn thông tin ledger hiện tại
+- **Block queries**: Truy vấn block theo height hoặc version
+- **Chain ID**: Lấy chain ID để xác định network
+- **Health check**: Kiểm tra tình trạng node và kết nối
+- **API specs**: Lấy OpenAPI và spec documentation
 
-### 🌐 Hỗ trợ mạng toàn diện
+### 👤 Quản lý tài khoản blockchain
 
-- Mainnet, Testnet, và Devnet
-- Tự động retry và error handling
-- Tối ưu hóa cho mạng IoT có băng thông thấp
+- **Account info**: Lấy thông tin tài khoản với ledger version tùy chọn
+- **Balance queries**: Kiểm tra số dư APT và custom coins/tokens
+- **Resources**: Truy vấn tất cả resources của account với pagination
+- **Specific resource**: Lấy resource cụ thể (VD: CoinStore)
+- **Modules**: Truy vấn modules được deploy bởi account
+- **Module details**: Lấy thông tin chi tiết module cụ thể
+- **Transaction history**: Lịch sử giao dịch của account
+- **Event queries**: Truy vấn events từ account handles
+
+### � Giao dịch và chuyển tiền
+
+- **Transaction by hash**: Truy vấn giao dịch theo hash
+- **Transaction by version**: Truy vấn giao dịch theo version number
+- **Transaction list**: Lấy danh sách giao dịch với pagination
+- **Submit transaction**: Gửi giao dịch đã ký lên network
+- **Batch submit**: Gửi nhiều giao dịch cùng lúc
+- **Transaction simulation**: Mô phỏng giao dịch trước khi gửi
+- **Gas estimation**: Ước tính gas price và gas usage
+- **Wait for confirmation**: Chờ xác nhận giao dịch với timeout
+- **Coin transfer**: Chuyển APT và custom coins
+- **Token transfer**: Chuyển NFT và fungible tokens
+
+### 🎨 NFT và Token Operations
+
+- **Create collection**: Tạo NFT collection với metadata
+- **Mint tokens**: Tạo NFT tokens với properties
+- **Token transfer**: Chuyển ownership NFT
+- **Collection management**: Quản lý collection settings
+- **Mutate settings**: Cấu hình quyền thay đổi metadata
+- **Supply tracking**: Theo dõi supply và maximum tokens
+
+### 📋 Smart Contract tương tác
+
+- **Call functions**: Thực thi entry functions trên contracts
+- **View functions**: Gọi view functions không thay đổi state
+- **Module deployment**: Deploy Move modules lên blockchain
+- **Contract calls**: Tương tác với deployed contracts
+- **Type arguments**: Hỗ trợ generic types và complex arguments
+- **Return value parsing**: Parse kết quả trả về từ functions
+
+### 📊 Event và Table Operations
+
+- **Event by handle**: Truy vấn events theo event handle
+- **Event by key**: Lấy events theo event key
+- **Event by creation**: Truy vấn theo creation number
+- **Event pagination**: Hỗ trợ limit và start cho large datasets
+- **Table items**: Truy vấn items trong Move tables
+- **Raw table data**: Lấy raw data từ tables
+- **Table pagination**: Efficient pagination cho large tables
+
+### 🔧 Transaction Builder
+
+- **Fluent API**: Builder pattern cho việc tạo transactions
+- **Entry functions**: Build entry function payloads
+- **Script payloads**: Tạo script-based transactions
+- **Pre-built types**: Templates cho coin transfer, account creation
+- **Gas configuration**: Tự động hoặc manual gas settings
+- **Expiration**: Cấu hình thời gian hết hạn giao dịch
+- **Chain validation**: Validate chain ID trước khi submit
+
+### 🛡️ Utilities và Helper Functions
+
+- **Address validation**: Kiểm tra tính hợp lệ của addresses
+- **Address normalization**: Chuẩn hóa address format
+- **Hex utilities**: Chuyển đổi hex/bytes
+- **Base64 encoding**: Encode/decode Base64
+- **SHA256 hashing**: Hash functions cho security
+- **BCS serialization**: Binary Canonical Serialization
+- **JSON parsing**: Safe JSON parsing với error handling
+- **Memory management**: Secure memory operations
+
+### 🌐 Network và kết nối
+
+- **Multi-network**: Hỗ trợ Mainnet, Testnet, Devnet
+- **Custom endpoints**: Cấu hình custom node URLs
+- **Timeout management**: Cấu hình timeout cho requests
+- **Auto retry**: Tự động retry khi network error
+- **Connection pooling**: Tái sử dụng HTTP connections
+- **Debug logging**: Chi tiết logging cho troubleshooting
+- **Error handling**: Comprehensive error codes và messages
 
 ### ⚡ Tối ưu cho ESP32
 
-- Memory footprint nhỏ
-- Efficient JSON parsing
-- Non-blocking operations
-- Debug mode đầy đủ
+- **Memory efficient**: < 50KB RAM usage
+- **Non-blocking**: Async operations không block main loop
+- **Power optimization**: Tối ưu cho battery-powered devices
+- **Flash storage**: Efficient sử dụng flash memory
+- **WiFi management**: Tự động reconnect WiFi
+- **OTA support**: Over-the-air updates compatibility
 
 ## 🛠 Kiến trúc kỹ thuật
 
@@ -53,21 +137,6 @@ graph TB
     E --> H[Crypto Functions]
     F --> I[Aptos Network]
     I --> J[Mainnet/Testnet/Devnet]
-```
-
-### 📚 Cấu trúc thư viện
-
-```
-ESP32-Aptos-SDK/
-├── src/
-│   ├── AptosSDK.h/.cpp          # Core SDK functionality
-│   ├── AptosAccount.h/.cpp      # Account management
-│   ├── AptosTransaction.h/.cpp  # Transaction building
-│   └── AptosUtils.h/.cpp        # Utility functions
-├── examples/
-│   ├── BasicUsage/              # Ví dụ cơ bản
-│   └── AdvancedUsage/           # Ví dụ nâng cao
-└── library.properties           # Arduino library config
 ```
 
 ## 🎯 Use Cases thực tế
@@ -212,59 +281,6 @@ ESP32 Device Status:
 └── Auto-payment: ENABLED
 ```
 
-### 🔄 Transaction Flow
-
-1. **Sensor Reading** → Temperature = 32°C
-2. **Condition Check** → temperature > 30°C = true
-3. **Transaction Build** → Transfer 10 APT to AC_Controller
-4. **Sign & Submit** → Using device private key
-5. **Confirmation** → Transaction confirmed in 3.2s
-6. **AC Activation** → Smart AC receives payment and turns on
-
-## 🏅 Hackathon Categories
-
-### 🎯 Primary Category: **Infrastructure & Developer Tools**
-
-- Cung cấp infrastructure cho IoT developers
-- Tool đầu tiên cho ESP32 + Aptos integration
-- Mở ra ecosystem mới cho Aptos
-
-### 🎯 Secondary Category: **DeFi & Payments**
-
-- Micropayments tự động cho IoT
-- Machine-to-machine transactions
-- Real-world payment use cases
-
-## 🔮 Roadmap và tương lai
-
-### 📅 Phase 1 (Completed) - Core SDK
-
-- ✅ Basic account management
-- ✅ Transaction operations
-- ✅ ESP32 optimization
-- ✅ Example applications
-
-### 📅 Phase 2 (Next 3 months) - Advanced Features
-
-- 🔄 Multi-signature support
-- 🔄 Batch transactions
-- 🔄 Smart contract deployment from ESP32
-- 🔄 Integration với Aptos Names
-
-### 📅 Phase 3 (6 months) - Ecosystem
-
-- 📋 Hardware wallet integration
-- 📋 Mobile app cho device management
-- 📋 Cloud dashboard và analytics
-- 📋 Marketplace cho IoT services
-
-### 📅 Phase 4 (1 year) - Mass Adoption
-
-- 📋 Integration với major IoT platforms
-- 📋 Enterprise solutions
-- 📋 Standards development
-- 📋 Global deployment
-
 ## 🤝 Đóng góp cho Aptos Ecosystem
 
 ### 🌱 Growing Developer Community
@@ -287,13 +303,6 @@ ESP32 Device Status:
 - Open source contributions
 
 ## 👥 Team & Experience
-
-### 🧑‍💻 Developer Background
-
-- **Blockchain Development**: 3+ years experience
-- **IoT Systems**: 5+ years với ESP32/Arduino
-- **Aptos Experience**: Early adopter và contributor
-- **Open Source**: Multiple successful projects
 
 ### 🎯 Vision
 
