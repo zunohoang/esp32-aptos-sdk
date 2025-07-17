@@ -1,130 +1,65 @@
-# 🚀 ESP32 Aptos SDK - Aptos Hackathon Submission
+# 🚀 AptosIoT SDK – The World's First IoT-to-Aptos Bridge
 
-## 📋 Giới thiệu dự án
+## 📋 Project Overview
 
-**ESP32 Aptos SDK** là một thư viện toàn diện cho phép các thiết bị IoT ESP32 tương tác trực tiếp với Aptos blockchain. Đây là lần đầu tiên các thiết bị IoT có thể dễ dàng kết nối và thực hiện các giao dịch blockchain một cách an toàn và hiệu quả.
+**AptosIoT SDK** is the world's first C/C++ development toolkit that enables direct communication between **ESP32-based** IoT devices and the Aptos blockchain. This groundbreaking SDK bridges the physical world and decentralized systems with a lightweight, secure, and high-performance interface—ideal for applications such as environmental sensing, smart monitoring, and token-based incentive systems.
 
-### 🎯 Vấn đề giải quyết
+### 🎯 Problems We Solve
 
-- **IoT và Blockchain**: Kết nối thế giới IoT với Aptos blockchain
-- **Tự động hóa giao dịch**: Thiết bị IoT có thể tự động thực hiện giao dịch dựa trên cảm biến
-- **Micropayments**: Thanh toán tự động cho các dịch vụ IoT
-- **Supply Chain**: Theo dõi sản phẩm thông qua cảm biến và blockchain
-- **Smart Home**: Nhà thông minh với khả năng thanh toán tự động
+- **IoT & Blockchain Integration**: Connecting the IoT world with Aptos blockchain
+- **Transaction Automation**: IoT devices can automatically execute transactions based on sensor data
+- **Micropayments**: Automated payments for IoT services
+- **Supply Chain**: Product tracking through sensors and blockchain
+- **Smart Home**: Intelligent homes with automatic payment capabilities
+- **And Many More**: Endless possibilities for IoT-blockchain integration
 
-## 🌟 Tính năng nổi bật
+## 🌟 Key Features
 
-### 🔐 Quản lý tài khoản và bảo mật
+### 🔐 Account Management & Security
 
-- **Tạo tài khoản**: Tạo account ngẫu nhiên hoặc từ private key
-- **Import từ mnemonic**: Khôi phục account từ seed phrase với derivation index
-- **Lưu trữ EEPROM**: Lưu private key an toàn trong EEPROM với mã hóa
-- **Signature**: Ký giao dịch và message với Ed25519
-- **Verification**: Xác minh chữ ký và tính toàn vẹn dữ liệu
-- **Secure memory**: Xóa an toàn dữ liệu nhạy cảm khỏi memory
+**Account Creation**: Generate random accounts or import from private key, **Mnemonic Import**: Recover accounts from seed phrase with derivation index, **EEPROM Storage**: Securely store private keys in EEPROM with encryption, **Digital Signatures**: Sign transactions and messages with Ed25519, **Signature Verification**: Verify signatures and data integrity, **Secure Memory**: Safely clear sensitive data from memory
 
-### 🏦 Thông tin blockchain và node
+### 🏦 Blockchain & Node Information
 
-- **Node info**: Lấy thông tin chi tiết về node Aptos
-- **Ledger info**: Truy vấn thông tin ledger hiện tại
-- **Block queries**: Truy vấn block theo height hoặc version
-- **Chain ID**: Lấy chain ID để xác định network
-- **Health check**: Kiểm tra tình trạng node và kết nối
-- **API specs**: Lấy OpenAPI và spec documentation
+**Node Info**: Get detailed information about Aptos nodes, **Ledger Info**: Query current ledger information, **Block Queries**: Query blocks by height or version, **Chain ID**: Get chain ID to identify network, **Health Check**: Monitor node status and connectivity, **API Specs**: Retrieve OpenAPI and spec documentation
 
-### 👤 Quản lý tài khoản blockchain
+### 👤 Blockchain Account Management
 
-- **Account info**: Lấy thông tin tài khoản với ledger version tùy chọn
-- **Balance queries**: Kiểm tra số dư APT và custom coins/tokens
-- **Resources**: Truy vấn tất cả resources của account với pagination
-- **Specific resource**: Lấy resource cụ thể (VD: CoinStore)
-- **Modules**: Truy vấn modules được deploy bởi account
-- **Module details**: Lấy thông tin chi tiết module cụ thể
-- **Transaction history**: Lịch sử giao dịch của account
-- **Event queries**: Truy vấn events từ account handles
+**Account Info**: Get account information with optional ledger version, **Balance Queries**: Check APT and custom coins/tokens balance, **Resources**: Query all account resources with pagination, **Specific Resource**: Get specific resources (e.g., CoinStore), **Modules**: Query modules deployed by account, **Module Details**: Get detailed information about specific modules, **Transaction History**: Account transaction history, **Event Queries**: Query events from account handles
 
-### � Giao dịch và chuyển tiền
+### 💸 Transactions & Transfers
 
-- **Transaction by hash**: Truy vấn giao dịch theo hash
-- **Transaction by version**: Truy vấn giao dịch theo version number
-- **Transaction list**: Lấy danh sách giao dịch với pagination
-- **Submit transaction**: Gửi giao dịch đã ký lên network
-- **Batch submit**: Gửi nhiều giao dịch cùng lúc
-- **Transaction simulation**: Mô phỏng giao dịch trước khi gửi
-- **Gas estimation**: Ước tính gas price và gas usage
-- **Wait for confirmation**: Chờ xác nhận giao dịch với timeout
-- **Coin transfer**: Chuyển APT và custom coins
-- **Token transfer**: Chuyển NFT và fungible tokens
+**Transaction by Hash**: Query transactions by hash, **Transaction by Version**: Query transactions by version number, **Transaction List**: Get transaction lists with pagination, **Submit Transaction**: Submit signed transactions to network, **Batch Submit**: Submit multiple transactions simultaneously, **Transaction Simulation**: Simulate transactions before sending, **Gas Estimation**: Estimate gas price and usage, **Wait for Confirmation**: Wait for transaction confirmation with timeout, **Coin Transfer**: Transfer APT and custom coins, **Token Transfer**: Transfer NFTs and fungible tokens
 
-### 🎨 NFT và Token Operations
+### 🎨 NFT & Token Operations
 
-- **Create collection**: Tạo NFT collection với metadata
-- **Mint tokens**: Tạo NFT tokens với properties
-- **Token transfer**: Chuyển ownership NFT
-- **Collection management**: Quản lý collection settings
-- **Mutate settings**: Cấu hình quyền thay đổi metadata
-- **Supply tracking**: Theo dõi supply và maximum tokens
+**Create Collection**: Create NFT collections with metadata, **Mint Tokens**: Create NFT tokens with properties, **Token Transfer**: Transfer NFT ownership, **Collection Management**: Manage collection settings, **Mutate Settings**: Configure metadata modification permissions, **Supply Tracking**: Track supply and maximum tokens
 
-### 📋 Smart Contract tương tác
+### 📋 Smart Contract Interactions
 
-- **Call functions**: Thực thi entry functions trên contracts
-- **View functions**: Gọi view functions không thay đổi state
-- **Module deployment**: Deploy Move modules lên blockchain
-- **Contract calls**: Tương tác với deployed contracts
-- **Type arguments**: Hỗ trợ generic types và complex arguments
-- **Return value parsing**: Parse kết quả trả về từ functions
+**Call Functions**: Execute entry functions on contracts, **View Functions**: Call view functions without state changes, **Module Deployment**: Deploy Move modules to blockchain, **Contract Calls**: Interact with deployed contracts, **Type Arguments**: Support generic types and complex arguments, **Return Value Parsing**: Parse results returned from functions
 
-### 📊 Event và Table Operations
+### 📊 Event & Table Operations
 
-- **Event by handle**: Truy vấn events theo event handle
-- **Event by key**: Lấy events theo event key
-- **Event by creation**: Truy vấn theo creation number
-- **Event pagination**: Hỗ trợ limit và start cho large datasets
-- **Table items**: Truy vấn items trong Move tables
-- **Raw table data**: Lấy raw data từ tables
-- **Table pagination**: Efficient pagination cho large tables
+**Event by Handle**: Query events by event handle, **Event by Key**: Get events by event key, **Event by Creation**: Query by creation number, **Event Pagination**: Support limit and start for large datasets, **Table Items**: Query items in Move tables, **Raw Table Data**: Get raw data from tables, **Table Pagination**: Efficient pagination for large tables
 
 ### 🔧 Transaction Builder
 
-- **Fluent API**: Builder pattern cho việc tạo transactions
-- **Entry functions**: Build entry function payloads
-- **Script payloads**: Tạo script-based transactions
-- **Pre-built types**: Templates cho coin transfer, account creation
-- **Gas configuration**: Tự động hoặc manual gas settings
-- **Expiration**: Cấu hình thời gian hết hạn giao dịch
-- **Chain validation**: Validate chain ID trước khi submit
+**Fluent API**: Builder pattern for creating transactions, **Entry Functions**: Build entry function payloads, **Script Payloads**: Create script-based transactions, **Pre-built Types**: Templates for coin transfer, account creation, **Gas Configuration**: Automatic or manual gas settings, **Expiration**: Configure transaction expiration time, **Chain Validation**: Validate chain ID before submission
 
-### 🛡️ Utilities và Helper Functions
+### 🛡️ Utilities & Helper Functions
 
-- **Address validation**: Kiểm tra tính hợp lệ của addresses
-- **Address normalization**: Chuẩn hóa address format
-- **Hex utilities**: Chuyển đổi hex/bytes
-- **Base64 encoding**: Encode/decode Base64
-- **SHA256 hashing**: Hash functions cho security
-- **BCS serialization**: Binary Canonical Serialization
-- **JSON parsing**: Safe JSON parsing với error handling
-- **Memory management**: Secure memory operations
+**Address Validation**: Check address validity, **Address Normalization**: Normalize address format, **Hex Utilities**: Convert hex/bytes, **Base64 Encoding**: Encode/decode Base64, **SHA256 Hashing**: Hash functions for security, **BCS Serialization**: Binary Canonical Serialization, **JSON Parsing**: Safe JSON parsing with error handling, **Memory Management**: Secure memory operations
 
-### 🌐 Network và kết nối
+### 🌐 Network & Connectivity
 
-- **Multi-network**: Hỗ trợ Mainnet, Testnet, Devnet
-- **Custom endpoints**: Cấu hình custom node URLs
-- **Timeout management**: Cấu hình timeout cho requests
-- **Auto retry**: Tự động retry khi network error
-- **Connection pooling**: Tái sử dụng HTTP connections
-- **Debug logging**: Chi tiết logging cho troubleshooting
-- **Error handling**: Comprehensive error codes và messages
+**Multi-Network**: Support Mainnet, Testnet, Devnet, **Custom Endpoints**: Configure custom node URLs, **Timeout Management**: Configure request timeouts, **Auto Retry**: Automatic retry on network errors, **Connection Pooling**: Reuse HTTP connections, **Debug Logging**: Detailed logging for troubleshooting, **Error Handling**: Comprehensive error codes and messages
 
-### ⚡ Tối ưu cho ESP32
+### ⚡ ESP32 Optimizations
 
-- **Memory efficient**: < 50KB RAM usage
-- **Non-blocking**: Async operations không block main loop
-- **Power optimization**: Tối ưu cho battery-powered devices
-- **Flash storage**: Efficient sử dụng flash memory
-- **WiFi management**: Tự động reconnect WiFi
-- **OTA support**: Over-the-air updates compatibility
+**Memory Efficient**: < 50KB RAM usage, **Non-blocking**: Async operations don't block main loop, **Power Optimization**: Optimized for battery-powered devices, **Flash Storage**: Efficient flash memory usage, **WiFi Management**: Automatic WiFi reconnection, **OTA Support**: Over-the-air updates compatibility
 
-## 🛠 Kiến trúc kỹ thuật
+## 🛠 Technical Architecture
 
 ```mermaid
 graph TB
@@ -139,12 +74,12 @@ graph TB
     I --> J[Mainnet/Testnet/Devnet]
 ```
 
-## 🎯 Use Cases thực tế
+## 🎯 Real-World Use Cases
 
 ### 1. 🏠 Smart Home Payments
 
 ```cpp
-// Tự động thanh toán điện khi sử dụng
+// Automatically pay for electricity when consumed
 if (powerConsumption > threshold) {
     aptos.transferCoin(deviceAccount, electricProvider, cost, txnHash);
 }
@@ -153,7 +88,7 @@ if (powerConsumption > threshold) {
 ### 2. 🚗 IoT Vehicle Tolls
 
 ```cpp
-// Tự động thanh toán phí qua trạm
+// Automatically pay toll fees
 if (gpsLocation.nearTollGate()) {
     aptos.transferCoin(vehicleAccount, tollGate, fee, txnHash);
 }
@@ -162,21 +97,21 @@ if (gpsLocation.nearTollGate()) {
 ### 3. 📦 Supply Chain Tracking
 
 ```cpp
-// Ghi nhận sản phẩm qua từng stage
+// Record product through each stage
 aptos.createToken(productCollection, serialNumber, locationData, 1, metadata);
 ```
 
 ### 4. 🌡 Environmental Data NFTs
 
 ```cpp
-// Tạo NFT từ dữ liệu môi trường
+// Create NFT from environmental data
 String envData = "{\"temp\":" + String(temperature) + ",\"humidity\":" + String(humidity) + "}";
 aptos.createToken("EnvironmentalData", sensorId, envData, 1, ipfsUrl);
 ```
 
-## 🚀 Demo và ví dụ
+## 🚀 Demo & Examples
 
-### Ví dụ cơ bản - Chuyển tiền tự động
+### Basic Example - Automatic Payments
 
 ```cpp
 #include <WiFi.h>
@@ -187,107 +122,94 @@ AptosSDK aptos(APTOS_TESTNET);
 AptosAccount deviceAccount;
 
 void setup() {
-    // Kết nối WiFi
+    // Connect WiFi
     WiFi.begin("SSID", "PASSWORD");
 
-    // Tạo hoặc load account
+    // Create or load account
     deviceAccount.createRandom();
 
-    // Kiểm tra balance
+    // Check balance
     uint64_t balance;
     aptos.getAccountBalance(deviceAccount.getAddress(), balance);
     Serial.println("Device balance: " + String(balance));
 }
 
 void loop() {
-    // Đọc cảm biến
+    // Read sensor
     float temperature = readTemperature();
 
-    // Nếu nhiệt độ cao, tự động thanh toán cho máy lạnh
+    // If temperature is high, automatically pay for AC
     if (temperature > 30.0) {
         String txnHash;
         if (aptos.transferCoin(deviceAccount, "0xACAddress", 1000, txnHash)) {
             Serial.println("AC payment sent: " + txnHash);
         }
-        delay(60000); // Chờ 1 phút
+        delay(60000); // Wait 1 minute
     }
 
-    delay(5000); // Đọc cảm biến mỗi 5 giây
+    delay(5000); // Read sensor every 5 seconds
 }
 ```
 
-### Ví dụ nâng cao - NFT từ dữ liệu IoT
+### Advanced Example - NFT from IoT Data
 
 ```cpp
-// Tạo collection cho dữ liệu IoT
+// Create collection for IoT data
 aptos.createCollection(deviceAccount, "IoT_Data_Collection",
                       "Real-time IoT sensor data", "https://iot-data.com",
                       1000000, mutateSettings);
 
-// Mint NFT từ dữ liệu cảm biến
+// Mint NFT from sensor data
 String sensorData = createSensorDataJSON();
 aptos.createToken(deviceAccount, "IoT_Data_Collection",
                  "Sensor_" + String(millis()), sensorData,
                  1, "https://metadata.iot", mutateSettings);
 ```
 
-## 🏆 Điểm nổi bật của dự án
+## 🏆 Project Highlights
 
-### 💡 Tính sáng tạo
+### 💡 Innovation
 
-- **Đầu tiên trên thế giới**: SDK đầu tiên cho phép ESP32 tương tác với Aptos
-- **Mở ra thị trường mới**: IoT + DeFi = IoTFi
-- **Real-world applications**: Giải quyết vấn đề thực tế
+- **World's First**: First SDK enabling ESP32 to interact with Aptos
+- **New Market**: IoT + DeFi = IoTFi
+- **Real-world Applications**: Solving practical problems
 
-### 🔧 Kỹ thuật xuất sắc
+### 🔧 Technical Excellence
 
-- **Memory efficient**: Tối ưu cho ESP32 với RAM giới hạn
-- **Security first**: Mã hóa private key, secure random generation
-- **Developer friendly**: API đơn giản, documentation đầy đủ
-- **Production ready**: Error handling, retry logic, debugging tools
+- **Memory Efficient**: Optimized for ESP32's limited RAM
+- **Security First**: Private key encryption, secure random generation
+- **Developer Friendly**: Simple API, comprehensive documentation
+- **Production Ready**: Error handling, retry logic, debugging tools
 
-### 🌍 Tác động kinh tế xã hội
+### 🌍 Economic & Social Impact
 
-- **Democratize blockchain**: Đưa blockchain đến mọi thiết bị IoT
-- **Cost reduction**: Giảm chi phí infrastructure cho IoT payments
-- **New business models**: Mở ra các mô hình kinh doanh mới
-- **Environmental benefits**: Smart resource management
+- **Democratize Blockchain**: Bringing blockchain to every IoT device
+- **Cost Reduction**: Reducing infrastructure costs for IoT payments
+- **New Business Models**: Opening up new business opportunities
+- **Environmental Benefits**: Smart resource management
 
-## 📊 Số liệu và hiệu suất
+## 📊 Performance & Metrics
 
 ### ⚡ Performance Metrics
 
-- **Memory usage**: < 50KB RAM
-- **Transaction time**: 2-5 giây (tùy network)
-- **Success rate**: 99.5% (với network ổn định)
-- **Power consumption**: Tối ưu cho battery-powered devices
+- **Memory Usage**: < 50KB RAM
+- **Transaction Time**: 2-5 seconds (depending on network)
+- **Success Rate**: 99.5% (with stable network)
+- **Power Consumption**: Optimized for battery-powered devices
 
 ### 📈 Scalability
 
-- **Concurrent devices**: Hỗ trợ hàng nghìn device đồng thời
-- **Transaction throughput**: Giới hạn bởi Aptos network
-- **Network efficiency**: Optimized HTTP requests
+- **Concurrent Devices**: Support thousands of devices simultaneously
+- **Transaction Throughput**: Limited by Aptos network capacity
+- **Network Efficiency**: Optimized HTTP requests
 
-## 🎨 Demo Video và Screenshots
-
-### 📱 Real-time Dashboard
-
-```
-ESP32 Device Status:
-├── Account: 0x742d35Cc6634C0532925a3b8D0C9a5...
-├── Balance: 1,000 APT
-├── Last Transaction: 0xabc123...
-├── Sensor Data: Temp: 25°C, Humidity: 60%
-└── Auto-payment: ENABLED
-```
-
-## 🤝 Đóng góp cho Aptos Ecosystem
+## 🤝 Contributing to Aptos Ecosystem
 
 ### 🌱 Growing Developer Community
 
-- Đưa IoT developers vào Aptos ecosystem
-- Tạo ra new use cases cho Aptos
-- Reference implementation cho move-to-device integration
+- Bringing IoT developers into Aptos ecosystem
+- Creating new use cases for Aptos
+- Reference implementation for move-to-device integration
 
 ### 💼 Business Opportunities
 
@@ -299,37 +221,30 @@ ESP32 Device Status:
 ### 🔗 Technical Contributions
 
 - Optimized network usage patterns
-- Security best practices cho embedded devices
+- Security best practices for embedded devices
 - Open source contributions
 
 ## 👥 Team & Experience
 
 ### 🎯 Vision
 
-"Kết nối mọi thiết bị IoT với Aptos blockchain để tạo ra một thế giới thông minh và tự động hóa"
+"Connecting every IoT device with Aptos blockchain to create an intelligent and automated world"
 
 ## 📞 Contact & Links
 
-### 🔗 Demo Links
+### 🔗 Source Links
 
-- **Live Demo**: [https://demo.esp32-aptos.com](https://demo.esp32-aptos.com)
-- **Video Demo**: [https://youtube.com/watch?v=demo](https://youtube.com/watch?v=demo)
-- **GitHub Repo**: [https://github.com/esp32-aptos-sdk](https://github.com/esp32-aptos-sdk)
+- **GitHub Repo**: [https://github.com/zunohoang/esp32-aptos-sdk](https://github.com/zunohoang/esp32-aptos-sdk)
 
 ### 📧 Contact
 
-- **Email**: dev@esp32-aptos.com
-- **Twitter**: @ESP32Aptos
-- **Discord**: ESP32Aptos#1234
+- **Email**: nguyenvanhoang2005nt@gmail.com
+- **Discord**: zunohoang
 
 ---
-
-## 🏆 Kết luận
-
-ESP32 Aptos SDK không chỉ là một thư viện đơn thuần, mà là cánh cửa mở ra kỷ nguyên mới của IoT + Blockchain. Với khả năng biến mọi thiết bị ESP32 thành một node trong Aptos ecosystem, chúng tôi tin rằng đây sẽ là nền tảng cho hàng triệu ứng dụng thực tế trong tương lai.
 
 **"From sensors to smart contracts - Making every device a blockchain participant"**
 
 ---
 
-_Cảm ơn Aptos team và hackathon organizers đã tạo cơ hội để chúng tôi đóng góp vào ecosystem tuyệt vời này! 🚀_
+_Thank you to the Aptos team and GM Vietnam 2025 for creating this opportunity to contribute to this amazing ecosystem! 🚀_
